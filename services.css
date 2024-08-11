@@ -1,0 +1,731 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Arimo:ital,wght@0,400..700;1,400..700&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    background-color: white;
+    font-family: "Spartan", sans-serif;
+}
+
+/*====================NAVBAR CONTENTS*====================*/
+#navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px 50px;
+    background: #1A1B1E;
+    box-shadow: 0 5px 15px #1A1B1E;
+    top: 0;
+    left: 0;
+}
+#serbar {
+    display: flex;
+    align-items: center;
+}
+#serbar li {
+    list-style: none;
+    padding: 0 10px;
+}
+.services{
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+#serbar li a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 200;
+    color: white;
+    position: relative;
+    transition: 0.5s ease;
+}
+.logo {
+    width: auto;
+    height: 30px;
+}
+.services button {
+    background-color: #1A1B1E;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: auto;
+    padding: 0 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease
+}
+.button.hover-effect {
+    background-color: #444;
+    transform: scale(1.05);
+    border-radius: 10px;
+}
+.book-btn.hover-effect {
+    background-color: #444;
+    transform: scale(1.05);
+    border-radius: 10px;
+}
+.book-btn:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+/*====================BODY CONTENTS====================*/
+.image-container {
+    position: relative;
+    width: 100%;
+}
+.bg {
+    border-radius: 4px;
+    height: auto;
+    width: 100%;
+    filter: brightness(75%);
+}
+.servtext{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 100px;
+    font-family: "Red Hat Display", sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+}
+.search-input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 1000px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+.book-btn {
+    width: auto;
+    height: auto;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+.book-btn a{
+    text-decoration: none;
+    color: white;
+}
+.search-btn{
+    height: 20px;
+    width: 20px;
+}
+.btn {
+    position: absolute; 
+    height: 40px;
+    width: 40px;
+    top: 47%;
+    left: 76%;
+    border-radius: 50px;
+    border: none;
+    background-color: white;
+}
+.btn:hover {
+    color: black;
+    cursor: pointer;
+}
+/*====================APPOINTMENT FORM====================*/
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    border-radius: 10px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#appointmentForm {
+    display: flex;
+    flex-direction: column;
+}
+#appointmentForm label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+#appointmentForm input {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.submit-btn {
+    background-color: #1A1B1E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    background-color: #444;
+}
+/*====================SERVICE PROVIDED====================*/ 
+h1 {
+    display: flex;
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 24px;
+    color: #1A1B1E;
+    margin: 60px 50px 5px 300px;   
+    padding-bottom: 20px;
+}
+.ccontainer{
+    display: grid;
+    place-items: center;
+    margin-inline: 1.5rem;
+    padding-block: 5rem;
+}
+.card-container{
+    display: grid;
+    row-gap: 3.5rem;
+}
+.card-article{
+    position: relative;
+    overflow: hidden;
+}
+.card_img{
+    width: 328px;
+    border-radius: 1.5rem;
+}
+.card-data{
+    width: 280px;
+    background-color: var(--container-color);
+    padding: 1.5rem 3rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -9rem;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+}
+.card-description{
+    font-family: "Red Hat Display", sans-serif;
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: .25rem;
+}
+.card-title{
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--title-color);
+    margin-bottom: .75rem;
+}
+  .card-article:hover .card-data {
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+  }
+  
+  .card-article:hover {
+    animation: remove-overflow 2s forwards;
+  }
+  
+  .card-article:not(:hover) {
+    animation: show-overflow 2s forwards;
+  }
+  
+  .card-article:not(:hover) .card-data {
+    animation: remove-data 1s forwards;
+  }
+/*====================RESPONSIVENESS====================*/ 
+@keyframes show-data {
+    50% {
+      transform: translateY(-10rem);
+    }
+    100% {
+      transform: translateY(-7rem);
+    }
+  }
+  
+  @keyframes remove-overflow {
+    to {
+      overflow: initial;
+    }
+  }
+  
+  @keyframes remove-data {
+    0% {
+      transform: translateY(-7rem);
+    }
+    50% {
+      transform: translateY(-10rem);
+    }
+    100% {
+      transform: translateY(.5rem);
+    }
+  }
+  
+  @keyframes show-overflow {
+    0% {
+      overflow: initial;
+      pointer-events: none;
+    }
+    50% {
+      overflow: hidden;
+    }
+  }
+  @media screen and (max-width: 300px) {
+    .ccontainer {
+      margin-inline: 1rem;
+    }
+  
+    .card-data {
+      width: 250px;
+      padding: 1rem;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    .card-container {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.5rem;
+    }
+  } 
+  @media screen and (min-width: 1200px) {
+    .ccontainer {
+      height: 50vh;
+    }  
+    .card-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .card-img {
+      width: 300px;
+    }
+    .card-data {
+      width: 316px;
+      padding-inline: 1rem;
+    }
+  }
+  @media (max-width: 768px) {
+    #navbar {
+        display: flex;
+        padding: 10px 20px;
+        font-size: 8vw;
+    }
+    .servtext {
+        font-size: 8vw;
+    }
+    .search-input {
+        width: 90%;
+        height: 25px;
+    }
+    .search-btn {
+        width: 10px;
+        height: 10px;
+        left: auto;
+        right: 5%;
+    }
+    .btn{
+        width: 10px;
+        height: 10px;
+        left: auto;
+        right: 8%;
+    }
+    h1 {
+        margin: 60px 20px 5px 20px;   
+        padding-bottom: 20px;
+    }
+    .services {
+        display: none;
+    }
+}
+/*====================SLIDER====================*/ 
+.slider{
+    width: 100%;
+    height: 100vh;
+}
+.slider .controls{
+    position: absolute;
+    top: 200%;
+    left: 47.15%;
+    transform: translateY(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    z-index: 2;
+}
+.slider .controls > div{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px; 
+    font-size: 20px;
+    cursor: pointer;
+    caret-color: transparent;
+}
+.slider .controls > .up{
+    top: 0px;
+    right: 0px;
+    background: white;
+    color: black;
+}
+.slider .controls > .down{
+    bottom: 0px;
+    left: 0px;
+    background: black;
+    color: white;
+}
+.slider .wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.slider .wrapper .left,
+.slider .wrapper .right{
+    width: 50%;
+    overflow: hidden;
+}
+.slider .wrapper .left > div,
+.slider .wrapper .right > div{
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-in-out;
+}
+.slider .wrapper .left > div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 100px 0px 50px;
+    font-family: "Red Hat Display", sans-serif;
+}
+.slider .wrapper .left > div h2{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.slider .wrapper .left > div p{
+    color: #555;
+    font-size: 18px;
+}
+.slider .wrapper .right > div img{
+    width: 100%;
+    height: 100%;
+    object-fit: stretch;
+}
+.slider .wrapper .right div:nth-child(1){
+    margin-top: -400vh;
+}
+/*====================TIMELINE====================*/ 
+.timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    background-image: url("https://res.cloudinary.com/momentum-media-group-pty-ltd/image/upload/v1655785534/Smart%20Property%20Investment/articles/Higher-mortgage-rates-put-a-chill-on-hot-capital-markets-report_spi.jpg");
+    background-size: cover;
+}
+.timeline-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 600px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: bounceIn 1.5s ease;
+    font-family: "Red Hat Display", sans-serif;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/*====================GRID PARAGRAPH====================*/ 
+.grid {
+    padding: 50px 0;
+    background-color: white;
+}
+.cgrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.grid-paragraph {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: justify;
+}
+@media (max-width: 1200px) {
+    .cgrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 900px) {
+    .cgrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .cgrid {
+        grid-template-columns: 1fr;
+    }
+}
+/*====================PARTNERS====================*/
+.partner{
+    margin-top: 2rem;
+    text-align: center;
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 20px;
+    color: #555;
+}
+h3 {
+    text-align: center;
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 18px;
+    color: #555;
+}
+.wrap{
+    width: 90%;
+    max-width: 1532px;
+    margin-inline: auto;
+    position: relative;
+    height: 100px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        rgba(0,0,0,0),
+        rgba(0,0,0,1)20%,
+        rgba(0,0,0,1)80%,
+        rgba(0,0,0,0)
+        );
+}
+@keyframes scrollLeft{
+    to{
+        left: -200px;
+    }
+}
+.item{
+    width: 200px;
+    height: 100px;
+    border-radius: 6px;
+    position: absolute;
+    left: max(calc(200px * 8),100%);
+    animation-name: scrollLeft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.item1{
+    animation-delay: calc(30s / 6 * (6 - 1)* -1) ;
+}
+.item2{
+    animation-delay: calc(30s / 6 * (6 - 2)* -1) ;
+}
+.item3{
+    animation-delay: calc(30s / 6 * (6 - 3)* -1) ;
+}
+.item4{
+    animation-delay: calc(30s / 6 * (6 - 4)* -1) ;
+}
+.item5{
+    animation-delay: calc(30s / 6 * (6 - 5)* -1) ;
+}
+.item6{
+    animation-delay: calc(30s / 6 * (6 - 6)* -1) ;
+}
+.pic1, .pic2, .pic3{
+    width: 200px;
+    height: 100px;
+}
+.parag{
+    text-align: center;
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 14px;
+    color: #555;
+    padding-left:20px;
+}
+/*====================WORK WITH US====================*/
+.bg-work {
+    margin-top: 10rem;
+    border-radius: 4px;
+    height: 500px;
+    width: 100%;
+    filter: brightness(75%);
+}
+.worktext{
+    position: absolute;
+    left: 50%;
+    top: 450%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 50px;
+    font-family: "Red Hat Display", sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+}
+.workpara{
+    position: absolute;
+    left: 28%;
+    top: 455%;
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 14px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+.workpara1{
+    position: absolute;
+    left: 37%;
+    top: 457%;
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 14px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+.btn-work{
+    position: absolute; 
+    height: 40px;
+    width: 150px;
+    top: 465%;
+    left: 46%;
+    border: 3px solid white;
+    background-color: transparent;
+    font-family: "Red Hat Display", sans-serif;
+    color: white;
+    font-weight: 200px;
+}
+.btn-work:hover {
+    color: black;
+    cursor: pointer;
+    background-color: white;
+}
+/*====================FOOTER====================*/
+.me{
+    text-decoration: none;
+    color: black;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); 
+    grid-template-rows: repeat(8, auto); 
+    gap: 20px; 
+    padding: 20px;
+    background-color: #f4f4f4;
+    font-family: "Red Hat Display", sans-serif;
+}
+.footer-item {
+    padding: 10px;
+}
+.link-btn{
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+h4{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.footer p{
+    text-align: justify;
+}
+h5{
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 12px;
+}
+.itm-1 {
+    margin-left: 10rem;
+    grid-row: span 1;
+    grid-column: span 5;
+}
+.itm-2 {
+    grid-row: span 1;
+    grid-column: span 2;
+}
+
+.itm-3 {
+    grid-row: 2 span 2;
+    grid-column: 6;
+}
+.itm-4 {
+    grid-row: 3;
+    grid-column: 6;
+}
+.itm-5 {
+    margin-left: 10rem;
+    grid-row: span 2;
+    grid-column: span 3;
+}
+.itm-6 {
+    margin-left: 10rem;
+    grid-row: 2;
+    grid-column: span 2;
+}
+.foot-logo{
+    width: 50px;
+    height: 50px;
+}
+.foot-logo1{
+    width: 70px;
+    height: 10px;
+    margin: auto
+}
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .footer-item {
+        grid-row: auto;
+        grid-column: auto;
+    }
+}
+
